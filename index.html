@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus Contabilidade Tech — Contabilidade Digital em João Pessoa</title>
+  <meta name="description" content="Assessoria contábil privada, 100% digital, para empresas e profissionais em João Pessoa. Fale direto com um contador pelo WhatsApp." />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --muted:#9fb2d6;
+      --text:#eaf0ff;
+      --brand:#2f7dff;
+      --brand2:#57c7ff;
+      --ok:#27d17f;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(900px 500px at 15% 10%, rgba(47,125,255,.18), transparent 55%),
+                  radial-gradient(700px 450px at 85% 20%, rgba(87,199,255,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 0 22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(47,125,255,.95), rgba(87,199,255,.95));
+      display:grid; place-items:center;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .logo img{width:100%; height:100%; object-fit:contain; background:rgba(0,0,0,.12)}
+    .brand h1{
+      font-size:15px; margin:0;
+      letter-spacing:.2px;
+    }
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius:999px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .pill strong{font-size:13px}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .hero h2{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:-.4px;
+    }
+    .hero p{margin:0 0 16px; color:var(--muted); font-size:16px; max-width:60ch}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      transition:.15s ease;
+      min-width: 210px;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border: none;
+      color: #061023;
+      font-weight: 700;
+    }
+    .btnPrimary:hover{filter:brightness(1.03)}
+    .note{
+      margin-top:14px;
+      font-size:12px;
+      color: var(--muted);
+    }
+    .sideBox h3{margin:0 0 10px; font-size:16px}
+    .kpis{display:grid; gap:10px; margin-top:10px}
+    .kpi{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(0,0,0,.12);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px; margin-top:6px;
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(39,209,127,.12);
+      flex:0 0 auto;
+    }
+    .kpi strong{display:block; font-size:14px}
+    .kpi span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    section{margin-top:18px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    @media (max-width: 900px){.grid2{grid-template-columns:1fr}}
+    h3{margin:0 0 10px; font-size:18px}
+    .list{
+      margin:10px 0 0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .li{
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(0,0,0,.12);
+      display:flex; gap:10px;
+      align-items:flex-start;
+    }
+    .check{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(87,199,255,.18);
+      border:1px solid rgba(87,199,255,.35);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .muted{color:var(--muted)}
+    .small{font-size:12px}
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .footer a{color:var(--muted); text-decoration:underline dotted}
+    .anchors{display:flex; gap:12px; flex-wrap:wrap}
+    .tag{
+      display:inline-flex; padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border); background: rgba(255,255,255,.04);
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <script>
+      // CONFIG — edite aqui se quiser
+      const WHATSAPP_NUMBER = "5583988131677"; // 55 + DDD + número
+      const WHATSAPP_MESSAGE = "Olá! Vim pelo Google e quero falar sobre contabilidade digital em João Pessoa.";
+      const INSTAGRAM_URL = "https://www.instagram.com/"; // coloque o link do Instagram da Nexus aqui
+      const COMPANY_CITY = "João Pessoa – PB";
+      const COMPANY_NAME = "Nexus Contabilidade Tech";
+      const COMPANY_CNPJ = ""; // opcional: "00.000.000/0001-00"
+      const RESPONSAVEL_CRC = ""; // opcional: "CRC-PB 00000/O-0"
+      const LOGO_PATH = "assets/logo.png"; // opcional: suba sua logo no repo (ex: /assets/logo.png)
+      const HAS_LOGO_FILE = false; // mude para true quando subir a logo no caminho acima
+
+      function waLink(){
+        const text = encodeURIComponent(WHATSAPP_MESSAGE);
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("[data-wa]").forEach(a => a.setAttribute("href", waLink()));
+        const ig = document.querySelector("[data-ig]");
+        ig.setAttribute("href", INSTAGRAM_URL);
+
+        document.querySelectorAll("[data-company]").forEach(el => el.textContent = COMPANY_NAME);
+        document.querySelectorAll("[data-city]").forEach(el => el.textContent = COMPANY_CITY);
+
+        const logoImg = document.getElementById("logoImg");
+        if(HAS_LOGO_FILE){
+          logoImg.src = LOGO_PATH;
+          logoImg.alt = COMPANY_NAME + " — Logo";
+        } else {
+          logoImg.remove();
+          document.getElementById("logoFallback").textContent = "N";
+        }
+
+        const cnpjEl = document.getElementById("cnpj");
+        const crcEl = document.getElementById("crc");
+        if(COMPANY_CNPJ){ cnpjEl.textContent = "CNPJ: " + COMPANY_CNPJ; } else { cnpjEl.style.display="none"; }
+        if(RESPONSAVEL_CRC){ crcEl.textContent = "Responsável técnico: " + RESPONSAVEL_CRC; } else { crcEl.style.display="none"; }
+      });
+    </script>
+
+    <div class="topbar">
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
+        <div class="logo" aria-hidden="true">
+          <img id="logoImg" src="" alt="" />
+          <div id="logoFallback" style="font-weight:900;font-size:18px;color:#061023"></div>
+        </div>
+        <div>
+          <h1><span data-company></span></h1>
+          <p>Assessoria contábil privada • <span data-city></span></p>
+        </div>
+      </a>
+
+      <a class="pill" data-wa href="#" rel="noopener">
+        <strong>WhatsApp</strong>
+        <span class="small">Atendimento direto</span>
+      </a>
+    </div>
+
+    <main id="topo" class="hero">
+      <div class="card">
+        <h2>Contabilidade Digital em João Pessoa para Empresas e Profissionais</h2>
+        <p>
+          Atendimento contábil <strong>privado</strong>, especializado e 100% digital para quem busca segurança,
+          organização fiscal e suporte profissional contínuo — com comunicação clara e sem burocracia.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" data-wa href="#" rel="noopener">Falar com um contador no WhatsApp</a>
+          <a class="btn" data-ig href="#" target="_blank" rel="noopener">Ir para o Instagram</a>
+        </div>
+
+        <p class="note">
+          *Serviço profissional <strong>independente de órgãos públicos</strong>. Atuamos como assessoria contábil privada.
+        </p>
+
+        <div class="anchors" style="margin-top:14px">
+          <a class="tag" href="#servicos">Serviços</a>
+          <a class="tag" href="#novos-negocios">Novos negócios</a>
+          <a class="tag" href="#sobre">Sobre</a>
+          <a class="tag" href="#privacidade">Privacidade</a>
+        </div>
+      </div>
+
+      <aside class="card sideBox">
+        <h3>O que você ganha com a Nexus</h3>
+        <div class="kpis">
+          <div class="kpi">
+            <span class="dot"></span>
+            <div>
+              <strong>Atendimento 100% digital</strong>
+              <span>WhatsApp + suporte contínuo para dúvidas e rotinas.</span>
+            </div>
+          </div>
+          <div class="kpi">
+            <span class="dot"></span>
+            <div>
+              <strong>Conformidade e segurança</strong>
+              <span>Rotinas e acompanhamento para reduzir riscos e evitar surpresas.</span>
+            </div>
+          </div>
+          <div class="kpi">
+            <span class="dot"></span>
+            <div>
+              <strong>Linguagem clara</strong>
+              <span>Sem complicação: explicações objetivas e direcionadas.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="servicos" class="grid2">
+      <div class="card">
+        <h3>Nossos serviços contábeis</h3>
+        <p class="muted">Página com conteúdo original real (ajuda a aprovação no Google Ads).</p>
+
+        <ul class="list">
+          <li class="li">
+            <span class="check">✓</span>
+            <div><strong>Contabilidade mensal completa</strong><div class="muted small">Rotinas contábeis e acompanhamento contínuo.</div></div>
+          </li>
+          <li class="li">
+            <span class="check">✓</span>
+            <div><strong>Apuração e acompanhamento de impostos</strong><div class="muted small">Conferência e orientação para manter a regularidade.</div></div>
+          </li>
+          <li class="li">
+            <span class="check">✓</span>
+            <div><strong>Planejamento tributário preventivo</strong><div class="muted small">Análises para reduzir riscos e melhorar previsibilidade.</div></div>
+          </li>
+          <li class="li">
+            <span class="check">✓</span>
+            <div><strong>Migração de contador com acompanhamento</strong><div class="muted small">Transição organizada para evitar retrabalho e pendências.</div></div>
+          </li>
+          <li class="li">
+            <span class="check">✓</span>
+            <div><strong>Atendimento para prestadores de serviços</strong><div class="muted small">Médicos, profissionais liberais, tecnologia e serviços.</div></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card" id="novos-negocios">
+        <h3>Suporte para formalização do negócio</h3>
+        <p class="muted">
+          Oferecemos <strong>assessoria contábil privada</strong> com suporte para a formalização de novos negócios,
+          <strong>sem custo adicional</strong>, mediante contratação dos serviços contábeis.
+        </p>
+        <p class="muted">
+          Nosso papel é orientar e acompanhar o processo com segurança e organização desde o início.
+          <strong>Não somos órgão público</strong> e não realizamos serviços governamentais.
+        </p>
+
+        <div class="ctaRow" style="margin-top:14px">
+          <a class="btn btnPrimary" data-wa href="#" rel="noopener">Quero falar com um contador</a>
+          <a class="btn" href="#sobre">Entender como funciona</a>
+        </div>
+
+        <p class="note">
+          Observação: evitamos termos que parecem “serviço oficial” em títulos (ex.: “abertura de CNPJ”).
+        </p>
+      </div>
+    </section>
+
+    <section id="sobre" class="grid2">
+      <div class="card">
+        <h3>Sobre a Nexus Contabilidade Tech</h3>
+        <p class="muted">
+          A <span data-company></span> é uma <strong>empresa privada de serviços contábeis</strong> com atendimento digital,
+          focada em organização fiscal, conformidade e suporte ao cliente.
+        </p>
+        <p class="muted">
+          Atuamos com comunicação simples, acompanhamento próximo e orientação profissional — sempre respeitando a legislação
+          vigente e de forma independente de órgãos públicos.
+        </p>
+
+        <div class="list" style="margin-top:14px">
+          <div class="li">
+            <span class="check">i</span>
+            <div>
+              <strong>Local de atendimento</strong>
+              <div class="muted small"><span data-city></span></div>
+            </div>
+          </div>
+
+          <div class="li">
+            <span class="check">i</span>
+            <div>
+              <strong>Identificação</strong>
+              <div id="cnpj" class="muted small"></div>
+              <div id="crc" class="muted small"></div>
+              <div class="muted small">Empresa privada de serviços contábeis.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Fale com um contador agora</h3>
+        <p class="muted">
+          Tire dúvidas, entenda como funciona nosso atendimento e receba orientação profissional.
+        </p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" data-wa href="#" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn" data-ig href="#" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+
+        <p class="note">
+          Ao clicar no WhatsApp, você será direcionado para atendimento. Não coletamos dados por formulário nesta página.
+        </p>
+      </div>
+    </section>
+
+    <section id="privacidade" class="card">
+      <h3>Política de Privacidade (resumo)</h3>
+      <p class="muted">
+        As informações enviadas por você através do WhatsApp são utilizadas exclusivamente para atendimento, esclarecimento
+        de dúvidas e elaboração de propostas. Não vendemos dados e não compartilhamos informações com terceiros,
+        exceto quando necessário para cumprir obrigações legais.
+      </p>
+      <p class="muted small">
+        Se desejar, você pode solicitar atualização ou remoção de informações enviadas durante o atendimento.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong style="color:var(--text)"><span data-company></span></strong><br/>
+        <span class="muted">Empresa privada de serviços contábeis • <span data-city></span></span>
+      </div>
+
+      <div class="anchors">
+        <a class="tag" href="#servicos">Serviços</a>
+        <a class="tag" href="#novos-negocios">Novos negócios</a>
+        <a class="tag" href="#sobre">Sobre</a>
+        <a class="tag" href="#privacidade">Privacidade</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
